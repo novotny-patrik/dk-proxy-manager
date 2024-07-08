@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory = cz.tw.proxymanager.\
+    config.SqlTestContainersSpringContextCustomizerFactory
