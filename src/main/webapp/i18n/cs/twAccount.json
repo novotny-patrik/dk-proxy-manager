@@ -1,0 +1,27 @@
+{
+  "dkProxyManagerApp": {
+    "twAccount": {
+      "home": {
+        "title": "Tw Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Vytvořit Tw Account",
+        "createOrEditLabel": "Vytvořit nebo upravit Tw Account",
+        "notFound": "No Tw Accounts found"
+      },
+      "created": "Byl vytvořen potomek entity Tw Account s identifikátorem {{ param }}",
+      "updated": "Potomek entity Tw Account s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Tw Account s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Tw Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Tw Account"
+      },
+      "id": "ID",
+      "username": "Username",
+      "password": "Password",
+      "active": "Active",
+      "proxy": "Proxy"
+    }
+  }
+}

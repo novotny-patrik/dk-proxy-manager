@@ -1,0 +1,29 @@
+{
+  "dkProxyManagerApp": {
+    "proxy": {
+      "home": {
+        "title": "Proxies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Vytvořit Proxy",
+        "createOrEditLabel": "Vytvořit nebo upravit Proxy",
+        "notFound": "No Proxies found"
+      },
+      "created": "Byl vytvořen potomek entity Proxy s identifikátorem {{ param }}",
+      "updated": "Potomek entity Proxy s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Proxy s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Proxy {{ id }}?"
+      },
+      "detail": {
+        "title": "Proxy"
+      },
+      "id": "ID",
+      "ipAddress": "Ip Address",
+      "port": "Port",
+      "username": "Username",
+      "password": "Password",
+      "active": "Active",
+      "twAccount": "Tw Account"
+    }
+  }
+}

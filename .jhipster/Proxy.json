@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20240710155116"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "ipAddress",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "port",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Proxy",
+  "relationships": [],
+  "searchEngine": "no"
+}

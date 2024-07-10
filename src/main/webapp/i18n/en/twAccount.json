@@ -1,0 +1,27 @@
+{
+  "dkProxyManagerApp": {
+    "twAccount": {
+      "home": {
+        "title": "Tw Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tw Account",
+        "createOrEditLabel": "Create or edit a Tw Account",
+        "notFound": "No Tw Accounts found"
+      },
+      "created": "A new Tw Account is created with identifier {{ param }}",
+      "updated": "A Tw Account is updated with identifier {{ param }}",
+      "deleted": "A Tw Account is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tw Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Tw Account"
+      },
+      "id": "ID",
+      "username": "Username",
+      "password": "Password",
+      "active": "Active",
+      "proxy": "Proxy"
+    }
+  }
+}

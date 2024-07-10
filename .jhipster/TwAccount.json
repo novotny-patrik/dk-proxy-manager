@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20240710155117"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "username",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "TwAccount",
+  "relationships": [
+    {
+      "otherEntityName": "proxy",
+      "relationshipName": "proxy",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}
