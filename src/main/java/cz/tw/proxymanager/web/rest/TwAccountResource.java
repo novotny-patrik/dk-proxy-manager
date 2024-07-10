@@ -1,15 +1,11 @@
 package cz.tw.proxymanager.web.rest;
 
+import cz.tw.proxymanager.chromedriver.ProxyService;
 import cz.tw.proxymanager.domain.TwAccount;
 import cz.tw.proxymanager.repository.TwAccountRepository;
 import cz.tw.proxymanager.web.rest.errors.BadRequestAlertException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,6 +14,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.ResponseUtil;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * REST controller for managing {@link cz.tw.proxymanager.domain.TwAccount}.
@@ -35,9 +37,14 @@ public class TwAccountResource {
     private String applicationName;
 
     private final TwAccountRepository twAccountRepository;
+    private final ProxyService proxyService;
 
-    public TwAccountResource(TwAccountRepository twAccountRepository) {
+    public TwAccountResource(
+        TwAccountRepository twAccountRepository,
+        ProxyService proxyService
+    ) {
         this.twAccountRepository = twAccountRepository;
+        this.proxyService = proxyService;
     }
 
     /**
@@ -62,7 +69,7 @@ public class TwAccountResource {
     /**
      * {@code PUT  /tw-accounts/:id} : Updates an existing twAccount.
      *
-     * @param id the id of the twAccount to save.
+     * @param id        the id of the twAccount to save.
      * @param twAccount the twAccount to update.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated twAccount,
      * or with status {@code 400 (Bad Request)} if the twAccount is not valid,
@@ -95,7 +102,7 @@ public class TwAccountResource {
     /**
      * {@code PATCH  /tw-accounts/:id} : Partial updates given fields of an existing twAccount, field will ignore if it is null
      *
-     * @param id the id of the twAccount to save.
+     * @param id        the id of the twAccount to save.
      * @param twAccount the twAccount to update.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated twAccount,
      * or with status {@code 400 (Bad Request)} if the twAccount is not valid,
@@ -103,7 +110,7 @@ public class TwAccountResource {
      * or with status {@code 500 (Internal Server Error)} if the twAccount couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
+    @PatchMapping(value = "/{id}", consumes = {"application/json", "application/merge-patch+json"})
     public ResponseEntity<TwAccount> partialUpdateTwAccount(
         @PathVariable(value = "id", required = false) final Long id,
         @NotNull @RequestBody TwAccount twAccount
@@ -164,6 +171,7 @@ public class TwAccountResource {
     public ResponseEntity<TwAccount> getTwAccount(@PathVariable("id") Long id) {
         log.debug("REST request to get TwAccount : {}", id);
         Optional<TwAccount> twAccount = twAccountRepository.findById(id);
+        proxyService.runProxy(twAccount.orElseThrow());
         return ResponseUtil.wrapOrNotFound(twAccount);
     }
 
