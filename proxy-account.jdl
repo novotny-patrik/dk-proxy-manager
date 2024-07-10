@@ -1,0 +1,17 @@
+entity Proxy {
+  ipAddress String required,
+  port Integer required,
+  username String,
+  password String,
+  active Boolean
+}
+
+entity TwAccount {
+  username String required,
+  password String required,
+  active Boolean
+}
+
+relationship OneToOne {
+  TwAccount{proxy} to Proxy
+}

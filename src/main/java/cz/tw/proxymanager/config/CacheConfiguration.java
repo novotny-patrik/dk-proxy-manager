@@ -50,6 +50,8 @@ public class CacheConfiguration {
             createCache(cm, cz.tw.proxymanager.domain.User.class.getName());
             createCache(cm, cz.tw.proxymanager.domain.Authority.class.getName());
             createCache(cm, cz.tw.proxymanager.domain.User.class.getName() + ".authorities");
+            createCache(cm, cz.tw.proxymanager.domain.Proxy.class.getName());
+            createCache(cm, cz.tw.proxymanager.domain.TwAccount.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
